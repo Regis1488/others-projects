@@ -1,2 +1,2 @@
 # others-projects
-Projets de C++ en dépit de 
+Projets random en dépit de
