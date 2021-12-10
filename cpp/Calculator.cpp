@@ -1,31 +1,36 @@
 #include <iostream>
 #include <cmath>
-#include <chrono>
 #include <thread>
+#include <chrono>
+
 using namespace std;
 
 int main()
 {
 	int reponse;
 	int i;
-	int addition;
+	int resultat;
 	int xy;
-	int chiffre;
+	int chiffre = 1;
 	float x;
 
 
 	cout << "###############################################\n#             Made by Sorus                   #\n#                                             #\n#                                             #\n#\##############################################\n";
-	cout << "Quelle operation veux tu effectuer" <<
-		endl;
-	cout << "[1] = Addition \n[2] = Racine carre" << endl;
+	cout << "Quelle operation veux tu effectuer" <<endl;
+	
+	cout << "[1] = Addition \n[2] = Soustraction\n[3] = Multiplication \n[4] = Division \n[5] = Racine carre " << endl;
 	cin >> reponse;
-	if (reponse != 1 && 2) {
+	if (reponse > 5) {
 		cout << "Vous n'avez pas choisi un chiffre correct" << endl;
 		return 0x02;
 	}
 
 
-		if (reponse == 1) {
+	if (reponse == 1) {
+		cin.clear();
+		cout << "Combien de chiffre veux tu calculer ? (Default = 1)" << endl;
+		cin >> chiffre;
+		for (i = 0; i < chiffre; i++) {
 			cout << "Donne moi le premier chiffre a calculer" << endl;
 			while (!std::cin.good())
 			{
@@ -34,15 +39,85 @@ int main()
 				std::cout << "Vous devez mettre un nombre" << std::endl;
 			}
 			cin >> x;
-			cout << "Donne moi le deuxième chiffre a calculer" << endl;
+			cout << "Donne moi le deuxieme chiffre a calculer" << endl;
 			cin >> xy;
-			addition = x + xy;
-			cout << "Le resultat est " << addition << endl;
-			std::this_thread::sleep_for(std::chrono::seconds(5));
-		
+			resultat = x + xy;
+			cout << "Le resultat est " << resultat << endl;
 		}
-
+		this_thread::sleep_for(chrono::seconds(5));
+		return 0x01;
+	}
 		if (reponse == 2) {
+			cin.clear();
+			cout << "Combien de chiffre veux tu calculer ? (Default = 1)" << endl;
+			cin >> chiffre;
+			for (i = 0; i < chiffre; i++) {
+				cout << "Donne moi le chiffre a calculer" << endl;
+				while (!std::cin.good())
+				{
+					std::cin.clear();
+					std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+					std::cout << "Vous devez mettre un nombre" << std::endl;
+
+				}
+
+				cin >> x;
+				cout << "Donne moi le deuxieme chiffre a calculer" << endl;
+				cin >> xy;
+				resultat = x - xy;
+				cout << "Le resultat est " << resultat << endl;
+			}
+
+			this_thread::sleep_for(chrono::seconds(5));
+			return 0x01;
+		}
+		if (reponse == 3) {
+			cin.clear();
+			cout << "Combien de chiffre veux tu calculer ? (Default = 1)" << endl;
+			cin >> chiffre;
+			for (i = 0; i < chiffre; i++) {
+				cout << "Donne moi le chiffre a calculer" << endl;
+				while (!std::cin.good())
+				{
+					std::cin.clear();
+					std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+					std::cout << "Vous devez mettre un nombre" << std::endl;
+				}
+
+				cin >> x;
+				cout << "Donne moi le deuxieme chiffre a calculer" << endl;
+				cin >> xy;
+				resultat = x * xy;
+				cout << "Le resultat est " << resultat << endl;
+			
+			}
+			this_thread::sleep_for(chrono::seconds(5));
+			return 0x01;
+		}
+		if (reponse == 4) {
+			cin.clear();
+			cout << "Combien de chiffre veux tu calculer ? (Default = 1)" << endl;
+			cin >> chiffre;
+			for (i = 0; i < chiffre; i++) {
+				cout << "Donne moi le chiffre a calculer" << endl;
+				while (!std::cin.good())
+				{
+					std::cin.clear();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+					std::cout << "Vous devez mettre un nombre" << endl;
+
+				}
+				cin >> x;
+				cout << "Donne moi le deuxieme chiffre a calculer" << endl;
+				cin >> xy;
+				resultat = x / xy;
+				cout << "Le resultat est " << resultat << endl;
+		
+			}
+			this_thread::sleep_for(chrono::seconds(5));
+			return 0x01;
+		}
+		if (reponse == 5) {
 			cin.clear();
 			cout << "Combien de chiffre veux tu calculer ?" << endl;
 			cin >> chiffre;
@@ -72,8 +147,9 @@ int main()
 				else {
 					x = sqrt(x);
 					cout << "Le resultat de la racine carre de " << xy << " est : " << x << endl;
-					std::this_thread::sleep_for(std::chrono::seconds(5));
+					
 				}
 			}
+			this_thread::sleep_for(chrono::seconds(5));
 		}
 	}
