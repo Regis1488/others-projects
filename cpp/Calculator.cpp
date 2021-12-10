@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
-
+#include <chrono>
+#include <thread>
 using namespace std;
 
 int main()
@@ -37,7 +38,8 @@ int main()
 			cin >> xy;
 			addition = x + xy;
 			cout << "Le resultat est " << addition << endl;
-			return 0x01;
+			std::this_thread::sleep_for(std::chrono::seconds(5));
+		
 		}
 
 		if (reponse == 2) {
@@ -70,6 +72,7 @@ int main()
 				else {
 					x = sqrt(x);
 					cout << "Le resultat de la racine carre de " << xy << " est : " << x << endl;
+					std::this_thread::sleep_for(std::chrono::seconds(5));
 				}
 			}
 		}
