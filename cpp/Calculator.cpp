@@ -6,7 +6,11 @@ using namespace std;
 
 int main()
 {
+	#if OS_WINDOWS
+	system("cls");
+	#else
 	system("clear");
+	#endif
 	int reponse;
 	int i;
 	int resultat;
@@ -18,9 +22,9 @@ int main()
 	cout << "###############################################\n#             Made by Sorus                   #\n#                                             #\n#                                             #\n#\##############################################\n";
 	cout << "Quelle operation veux tu effectuer" << endl;
 
-	cout << "[1] = Addition \n[2] = Soustraction\n[3] = Multiplication \n[4] = Division \n[5] = Racine carre\n[6] = Sinus\n[7] = Cosinus\n[8] = Tangente\n[9] = Credits" << endl;
+	cout << "[1] = Addition \n[2] = Soustraction\n[3] = Multiplication \n[4] = Division \n[5] = Racine carre\n[6] = Sinus\n[7] = Cosinus\n[8] = Tangente\n[9] = Credits\n[10] = Exit" << endl;
 	cin >> reponse;
-	if (reponse > 9) {
+	if (reponse > 10) {
 		cout << "Vous n'avez pas choisi un chiffre correct" << endl;
 		return 0x02;
 	}
@@ -295,7 +299,9 @@ if (reponse == 8)
 		#endif
 	}
 	if(reponse == 9) {
-		#if OS_WINDOWS
+		cout << "Créateur et Devloppeur : \n Titouan Dupont\n Alias Sorus\n ou Regis1488" << endl;
+		this_thread::sleep_for(chrono::seconds(5));
+	#if OS_WINDOWS
 	system("calculator.exe");
 	system("cls");
 	#else
@@ -303,10 +309,15 @@ if (reponse == 8)
 	system("./calculator");
 		#endif
 		
-		cout << "Créateur et Devloppeur : \n Titouan Dupont\n Alias Sorus\n ou Regis1488" << endl;
-		this_thread::sleep_for(chrono::seconds(5));
-	
-		
 	}
-
+	if(reponse == 10) {
+		cout << "Arevoir !" <<  endl;
+		this_thread::sleep_for(chrono::seconds(1));
+		#if OS_WINDOWS
+	system("cls");
+	#else
+	system("clear");
+		#endif
+		return 0x01;
+	}
 }
