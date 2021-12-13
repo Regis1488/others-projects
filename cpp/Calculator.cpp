@@ -88,7 +88,9 @@ beginning:
 
 			this_thread::sleep_for(chrono::seconds(5));
 			CheckOs();
+    goto beginning;
 
+			return 0;
 		}
 		if (reponse == 3) {
 			cin.clear();
@@ -112,7 +114,9 @@ beginning:
 			}
 			this_thread::sleep_for(chrono::seconds(5));
 			CheckOs();
+goto beginning;
 
+			return 0;
 		}
 		if (reponse == 4) {
 			cin.clear();
@@ -136,7 +140,9 @@ beginning:
 			}
 			this_thread::sleep_for(chrono::seconds(5));
 			CheckOs();
+goto beginning;
 
+			return 0;
 		}
 		if (reponse == 5) {
 			cin.clear();
@@ -173,6 +179,9 @@ beginning:
 			}
 			this_thread::sleep_for(chrono::seconds(5));
 			CheckOs();
+            goto beginning;
+
+			return 0;
 		}
 		if (reponse == 6)
 		{
@@ -204,7 +213,9 @@ beginning:
 			}
 			this_thread::sleep_for(chrono::seconds(5));
 			CheckOs();
+    goto beginning;
 
+			return 0;
 		}
 		if (reponse == 7)
 		{
@@ -236,7 +247,9 @@ beginning:
 			}
 			this_thread::sleep_for(chrono::seconds(5));
 			CheckOs();
+goto beginning;
 
+			return 0;
 		}
 		if (reponse == 8)
 		{
@@ -268,12 +281,17 @@ beginning:
 			}
 			this_thread::sleep_for(chrono::seconds(5));
 			CheckOs();
+            goto beginning;
+
+			return 0;
 		}
 		if (reponse == 9) {
 			cout << "Créateur et Devloppeur : \n Titouan Dupont\n Alias Sorus\n ou Regis1488" << endl;
 			this_thread::sleep_for(chrono::seconds(5));
 			CheckOs();
+goto beginning;
 
+			return 0;
 		}
 		if (reponse == 10) {
 			cout << "Arevoir !" << endl;
