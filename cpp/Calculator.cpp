@@ -2,15 +2,27 @@
 #include <cmath>
 #include <thread>
 #include <chrono>
+
 using namespace std;
+void CheckOs() {
+#ifdef _WIN64
+	system("clear");
+	system("ConsoleApplication1.exe");
+#ifdef _WIN32
+	system("clear");
+	system("ConsoleApplication1.exe");
+#else
+	system("cls");
+	system("./calculator");
+#endif 
+
+	#endif
+}
 
 int main()
 {
-	#if OS_WINDOWS
-	system("cls");
-	#else
-	system("clear");
-	#endif
+
+	CheckOs();
 	int reponse;
 	int i;
 	int resultat;
@@ -49,13 +61,7 @@ int main()
 			cout << "Le resultat est " << resultat << endl;
 		}
 		this_thread::sleep_for(chrono::seconds(5));
-		#if OS_WINDOWS
-	system("calculator.exe");
-	system("cls");
-	#else
-	system("clear");
-	system("./calculator");
-		#endif
+		CheckOs();
 	}
 	if (reponse == 2) {
 		cin.clear();
@@ -79,13 +85,7 @@ int main()
 		}
 
 		this_thread::sleep_for(chrono::seconds(5));
-		#if OS_WINDOWS
-	system("calculator.exe");
-	system("cls");
-	#else
-	system("clear");
-	system("./calculator");
-		#endif
+		CheckOs();
 	}
 	if (reponse == 3) {
 		cin.clear();
@@ -108,13 +108,7 @@ int main()
 
 		}
 		this_thread::sleep_for(chrono::seconds(5));
-		#if OS_WINDOWS
-	system("calculator.exe");
-	system("cls");
-	#else
-	system("clear");
-	system("./calculator");
-		#endif
+		CheckOs();
 	}
 	if (reponse == 4) {
 		cin.clear();
@@ -137,13 +131,7 @@ int main()
 
 		}
 		this_thread::sleep_for(chrono::seconds(5));
-		#if OS_WINDOWS
-	system("calculator.exe");
-	system("cls");
-	#else
-	system("clear");
-	system("./calculator");
-		#endif
+		CheckOs();
 	}
 	if (reponse == 5) {
 		cin.clear();
@@ -179,145 +167,111 @@ int main()
 			}
 		}
 		this_thread::sleep_for(chrono::seconds(5));
-		#if OS_WINDOWS
-	system("calculator.exe");
-	system("cls");
-	#else
-	system("clear");
-	system("./calculator");
-		#endif
+		CheckOs();
 	}
 	if (reponse == 6)
 	{
-			cin.clear();
-			cout << "Vous voulez calculer combien de chiffre ?" << endl;
-			cin >> chiffre;
+		cin.clear();
+		cout << "Vous voulez calculer combien de chiffre ?" << endl;
+		cin >> chiffre;
+		while (!std::cin.good())
+		{
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			cout << "Vous devez mettre un nombre" << endl;
+			std::cin >> chiffre;
+		}
+		cout << "Veuiller saisir le chiffre a calculer" << endl;
+		for (i = 0; i < chiffre; i++) {
 			while (!std::cin.good())
 			{
 				std::cin.clear();
 				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-				cout << "Vous devez mettre un nombre" << endl;
+				std::cout << "Vous devez mettre un nombre" << std::endl;
 				std::cin >> chiffre;
 			}
-			cout << "Veuiller saisir le chiffre a calculer" << endl;
-			for (i = 0; i < chiffre; i++) {
-				while (!std::cin.good())
-				{
-					std::cin.clear();
-					std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-					std::cout << "Vous devez mettre un nombre" << std::endl;
-					std::cin >> chiffre;
-				}
 
 
-			
-				cin >> reponse;
-				reponseTri = sin(reponse);
-				cout << reponseTri << endl;
+
+			cin >> reponse;
+			reponseTri = sin(reponse);
+			cout << reponseTri << endl;
 		}
-			this_thread::sleep_for(chrono::seconds(5));
-			#if OS_WINDOWS
-	system("calculator.exe");
-	system("cls");
-	#else
-	system("clear");
-	system("./calculator");
-		#endif
+		this_thread::sleep_for(chrono::seconds(5));
+		CheckOs();
 	}
-if (reponse == 7)
+	if (reponse == 7)
 	{
-			cin.clear();
-			cout << "Vous voulez calculer combien de chiffre ?" << endl;
-			cin >> chiffre;
+		cin.clear();
+		cout << "Vous voulez calculer combien de chiffre ?" << endl;
+		cin >> chiffre;
+		while (!std::cin.good())
+		{
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			cout << "Vous devez mettre un nombre" << endl;
+			std::cin >> chiffre;
+		}
+		cout << "Veuiller saisir le chiffre a calculer" << endl;
+		for (i = 0; i < chiffre; i++) {
 			while (!std::cin.good())
 			{
 				std::cin.clear();
 				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-				cout << "Vous devez mettre un nombre" << endl;
+				std::cout << "Vous devez mettre un nombre" << std::endl;
 				std::cin >> chiffre;
 			}
-			cout << "Veuiller saisir le chiffre a calculer" << endl;
-			for (i = 0; i < chiffre; i++) {
-				while (!std::cin.good())
-				{
-					std::cin.clear();
-					std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-					std::cout << "Vous devez mettre un nombre" << std::endl;
-					std::cin >> chiffre;
-				}
 
 
-			
-				cin >> reponse;
-				reponseTri = cos(reponse);
-				cout << reponseTri << endl;
+
+			cin >> reponse;
+			reponseTri = cos(reponse);
+			cout << reponseTri << endl;
 		}
-			this_thread::sleep_for(chrono::seconds(5));
-			#if OS_WINDOWS
-	system("calculator.exe");
-	system("cls");
-	#else
-	system("clear");
-	system("./calculator");
-		#endif
+		this_thread::sleep_for(chrono::seconds(5));
+		CheckOs();
 	}
-if (reponse == 8)
+	if (reponse == 8)
 	{
-			cin.clear();
-			cout << "Vous voulez calculer combien de chiffre ?" << endl;
-			cin >> chiffre;
+		cin.clear();
+		cout << "Vous voulez calculer combien de chiffre ?" << endl;
+		cin >> chiffre;
+		while (!std::cin.good())
+		{
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			cout << "Vous devez mettre un nombre" << endl;
+			std::cin >> chiffre;
+		}
+		cout << "Veuiller saisir le chiffre a calculer" << endl;
+		for (i = 0; i < chiffre; i++) {
 			while (!std::cin.good())
 			{
 				std::cin.clear();
 				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-				cout << "Vous devez mettre un nombre" << endl;
+				std::cout << "Vous devez mettre un nombre" << std::endl;
 				std::cin >> chiffre;
 			}
-			cout << "Veuiller saisir le chiffre a calculer" << endl;
-			for (i = 0; i < chiffre; i++) {
-				while (!std::cin.good())
-				{
-					std::cin.clear();
-					std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-					std::cout << "Vous devez mettre un nombre" << std::endl;
-					std::cin >> chiffre;
-				}
 
 
-			
-				cin >> reponse;
-				reponseTri = tan(reponse);
-				cout << reponseTri << endl;
+
+			cin >> reponse;
+			reponseTri = tan(reponse);
+			cout << reponseTri << endl;
 		}
-			this_thread::sleep_for(chrono::seconds(5));
-					#if OS_WINDOWS
-	system("calculator.exe");
-	system("cls");
-	#else
-	system("clear");
-	system("./calculator");
-		#endif
+		this_thread::sleep_for(chrono::seconds(5));
+		CheckOs();
 	}
-	if(reponse == 9) {
+	if (reponse == 9) {
 		cout << "Créateur et Devloppeur : \n Titouan Dupont\n Alias Sorus\n ou Regis1488" << endl;
 		this_thread::sleep_for(chrono::seconds(5));
-	#if OS_WINDOWS
-	system("calculator.exe");
-	system("cls");
-	#else
-	system("clear");
-	system("./calculator");
-		#endif
-		
+		CheckOs();
+
 	}
-	if(reponse == 10) {
-		cout << "Arevoir !" <<  endl;
+	if (reponse == 10) {
+		cout << "Arevoir !" << endl;
 		this_thread::sleep_for(chrono::seconds(1));
-		#if OS_WINDOWS
-	system("cls");
-	#else
-	system("clear");
-		#endif
+		CheckOs();
 		return 0x01;
 	}
 }
