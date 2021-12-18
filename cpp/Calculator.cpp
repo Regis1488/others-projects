@@ -18,7 +18,6 @@ void CheckOs() {
 
 int main(){
 	system("title Calculator");
-	int gotop = 0;
 	while (true) {
 		CheckOs();
 		int reponse;
