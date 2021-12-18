@@ -267,7 +267,7 @@ int main(){
 			CheckOs();
 		}
 		if (reponse == 9) {
-			cout << "Créateur et Devloppeur : \n Titouan Dupont\n Alias Sorus\n ou Regis1488" << endl;
+			cout << "Créateur et Devloppeur : \n Alias Sorus\n ou Regis1488" << endl;
 			this_thread::sleep_for(chrono::seconds(5));
 			CheckOs();
 
