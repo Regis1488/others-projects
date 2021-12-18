@@ -6,7 +6,7 @@ using namespace std;
 
 
 
-void CheckOs() {
+void CheckOs() { 
 #ifdef _WIN64
 	system("cls");
 #else
@@ -15,10 +15,10 @@ void CheckOs() {
 
 }
 
-int main()
-{
+
+int main(){
+	system("title Calculator");
 	int gotop = 0;
-beginning:
 	while (true) {
 		CheckOs();
 		int reponse;
@@ -28,14 +28,14 @@ beginning:
 		int chiffre = 1;
 		float x;
 		double reponseTri;
-
 		cout << "###############################################\n#             Made by Sorus                   #\n#                                             #\n#                                             #\n#\##############################################\n";
 		cout << "Quelle operation veux tu effectuer" << endl;
 
 		cout << "[1] = Addition \n[2] = Soustraction\n[3] = Multiplication \n[4] = Division \n[5] = Racine carre\n[6] = Sinus\n[7] = Cosinus\n[8] = Tangente\n[9] = Credits\n[10] = Exit" << endl;
 		cin >> reponse;
-		if (reponse > 10) {
+		if (reponse > 11) {
 			cout << "Vous n'avez pas choisi un chiffre correct" << endl;
+			std::this_thread::sleep_for(std::chrono::seconds(5));
 			return 0x02;
 		}
 
@@ -60,9 +60,6 @@ beginning:
 			}
 			this_thread::sleep_for(chrono::seconds(5));
 			CheckOs();
-			goto beginning;
-
-			return 0;
 
 		}
 		if (reponse == 2) {
@@ -88,9 +85,7 @@ beginning:
 
 			this_thread::sleep_for(chrono::seconds(5));
 			CheckOs();
-    goto beginning;
 
-			return 0;
 		}
 		if (reponse == 3) {
 			cin.clear();
@@ -114,9 +109,7 @@ beginning:
 			}
 			this_thread::sleep_for(chrono::seconds(5));
 			CheckOs();
-goto beginning;
 
-			return 0;
 		}
 		if (reponse == 4) {
 			cin.clear();
@@ -140,9 +133,7 @@ goto beginning;
 			}
 			this_thread::sleep_for(chrono::seconds(5));
 			CheckOs();
-goto beginning;
 
-			return 0;
 		}
 		if (reponse == 5) {
 			cin.clear();
@@ -179,9 +170,6 @@ goto beginning;
 			}
 			this_thread::sleep_for(chrono::seconds(5));
 			CheckOs();
-            goto beginning;
-
-			return 0;
 		}
 		if (reponse == 6)
 		{
@@ -213,9 +201,7 @@ goto beginning;
 			}
 			this_thread::sleep_for(chrono::seconds(5));
 			CheckOs();
-    goto beginning;
 
-			return 0;
 		}
 		if (reponse == 7)
 		{
@@ -247,9 +233,7 @@ goto beginning;
 			}
 			this_thread::sleep_for(chrono::seconds(5));
 			CheckOs();
-goto beginning;
 
-			return 0;
 		}
 		if (reponse == 8)
 		{
@@ -281,17 +265,12 @@ goto beginning;
 			}
 			this_thread::sleep_for(chrono::seconds(5));
 			CheckOs();
-            goto beginning;
-
-			return 0;
 		}
 		if (reponse == 9) {
 			cout << "Créateur et Devloppeur : \n Titouan Dupont\n Alias Sorus\n ou Regis1488" << endl;
 			this_thread::sleep_for(chrono::seconds(5));
 			CheckOs();
-goto beginning;
 
-			return 0;
 		}
 		if (reponse == 10) {
 			cout << "Arevoir !" << endl;
@@ -299,5 +278,6 @@ goto beginning;
 			CheckOs();
 			return 0x01;
 		}
+
 	}
 }
